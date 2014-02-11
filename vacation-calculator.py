@@ -7,6 +7,12 @@
 # Copyright © Alessandro Accardo 2014. All rights reserved.
 #
 import vobject
+from datetime import date
+
+class Event:
+	def printEvent(evt):
+		print evt.Title + ' <' + evt.Description + '> ' + evt.Date.strftime('%d %B %Y')
+
 
 data = open("/home/kLeZ-hAcK/Calendario-KOrganizer/std.ics").read()
 
@@ -28,9 +34,14 @@ for component in cal:
 		#
 
 		if child.name == 'VJOURNAL':
+			e = Event()
 			if hasattr(child, 'summary'):
-				print child.summary.value
+				e.Title = child.summary.value
+			else: e.Title = ''
 			if hasattr(child, 'description'):
-				print child.description.value
+				e.Description = child.description.value
+			else: e.Description = ''
 			if hasattr(child, 'dtstart'):
-				print child.dtstart.value
+				e.Date = child.dtstart.value
+			else: e.Date = date.fromtimestamp(0)
+			e.printEvent()
