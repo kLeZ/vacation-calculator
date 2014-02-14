@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # coding=utf-8
 #
-# This script is written by Alessandro Accardo
+# This script was written by Alessandro Accardo
 # This peace of software is licensed under the terms of the GNU GPL v3
 # Copyright © Alessandro Accardo 2014. All rights reserved.
 #
 
-from PyQt4.QtCore import Qt
+from PyQt4.QtCore import *
 from PyKDE4.plasma import Plasma
 from PyKDE4 import plasmascript
 
@@ -26,13 +26,13 @@ class VacationCalculator(plasmascript.Applet):
 
 	def init(self):
 		self.setHasConfigurationInterface(False)
-		self.resize(125, 125)
+		self.resize(400, 100)
 		self.setAspectRatioMode(Plasma.Square)
 
 	def paintInterface(self, painter, option, rect):
 		painter.save()
-		painter.setPen(Qt.white)
-		painter.drawText(rect, Qt.AlignVCenter | Qt.AlignHCenter, self.Vacation)
+		painter.setPen(Qt.black)
+		painter.drawText(rect, Qt.AlignVCenter | Qt.AlignHCenter, QString(str(self.Vacation)))
 		painter.restore()
 
 def CreateApplet(parent):

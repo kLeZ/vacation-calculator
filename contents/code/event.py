@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # coding=utf-8
 #
-# This script is written by Alessandro Accardo
+# This script was written by Alessandro Accardo
 # This peace of software is licensed under the terms of the GNU GPL v3
 # Copyright © Alessandro Accardo 2014. All rights reserved.
 #
